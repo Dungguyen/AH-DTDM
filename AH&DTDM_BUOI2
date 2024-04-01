@@ -1,0 +1,51 @@
+//Bài 1
+#include <stdio.h>
+
+// Hàm kiểm tra số có phải là bội của 7 không
+int isMultipleOf7(int num) {
+    return (num % 7 == 0);
+}
+
+int main() {
+    printf("Cac so nguyen co 2 chu so va la boi cua 7 la:\n");
+    for (int i = 10; i < 100; i++) {
+        if (isMultipleOf7(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////
+//Bài 2
+#include <stdio.h>
+#include <math.h>
+
+// Hàm kiểm tra số chính phương
+int isPerfectSquare(int num) {
+    int squareRoot = sqrt(num);
+    return (squareRoot * squareRoot == num);
+}
+
+// Hàm đếm và in ra các số chính phương nhỏ hơn n
+void countAndPrintPerfectSquares(int n) {
+    printf("Cac so chinh phuong nho hon %d la:\n", n);
+    for (int i = 1; i * i < n; i++) {
+        if (isPerfectSquare(i)) {
+            printf("%d ", i * i);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Nhap vao so nguyen duong n: ");
+    scanf("%d", &n);
+
+    // Gọi hàm để đếm và in ra các số chính phương nhỏ hơn n
+    countAndPrintPerfectSquares(n);
+
+    return 0;
+}
